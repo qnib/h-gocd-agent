@@ -11,7 +11,7 @@ ENV GO_SERVER=gocd-server \
     GOPATH=/usr/local/
 
 RUN apt-get update \
- && apt-get install -y wget bc unzip jq nmap \
+ && apt-get install -y wget bc unzip jq nmap iptables \
  && wget -qO /usr/local/bin/go-github https://github.com/qnib/go-github/releases/download/0.2.2/go-github_0.2.2_Linux \
  && chmod +x /usr/local/bin/go-github \
  && echo "Download '$(/usr/local/bin/go-github rLatestUrl --ghorg qnib --ghrepo gocd-scripts --regex "gocd.tar" --limit 1)'" \
