@@ -1,0 +1,8 @@
+{
+  "check": {
+    "id": "gocd-agent",
+    "name": "gocd-agent",
+    "script": "/opt/qnib/gocd/agent/bin/check.sh",
+    "interval": "10s"
+  }
+}

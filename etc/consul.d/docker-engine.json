@@ -1,0 +1,15 @@
+{
+  "services": [
+    {
+      "id": "docker-engine",
+      "name": "docker-engine",
+      "tags": [],
+      "checks": [
+        {
+          "script": "docker version",
+          "interval": "5s"
+        }
+      ]
+    }
+  ]
+}
