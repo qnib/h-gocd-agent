@@ -23,6 +23,7 @@ RUN echo \
  && mkdir -p /opt/ && cd /opt/ \
  && unzip -q /tmp/go-agent.zip && rm -f /tmp/go-agent.zip \
  && mv /opt/go-agent-${GOCD_VER} /opt/go-agent
+RUN chmod +x /opt/go-agent/agent.sh
 ADD etc/consul-templates/gocd/autoregister.properties.ctmpl /etc/consul-templates/gocd/
 ADD etc/supervisord.d/gocd-agent.ini \
     etc/supervisord.d/docker-engine.ini \
