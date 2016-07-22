@@ -11,7 +11,8 @@ ENV GO_SERVER=gocd-server \
     GOPATH=/usr/local/
 
 RUN apt-get update \
- && apt-get install -y wget bc unzip jq nmap iptables \
+ && apt-get install -y wget bc unzip jq nmap iptables git make golang \
+ && go get -d cmd/vet \
  && wget -qO /usr/local/bin/go-github https://github.com/qnib/go-github/releases/download/0.2.2/go-github_0.2.2_Linux \
  && chmod +x /usr/local/bin/go-github \
  && echo "Download '$(/usr/local/bin/go-github rLatestUrl --ghorg qnib --ghrepo gocd-scripts --regex "gocd.tar" --limit 1)'" \
@@ -35,3 +36,4 @@ ADD etc/consul.d/docker-engine.json \
 RUN wget -qO - https://test.docker.com/builds/Linux/x86_64/docker-1.12.0-rc4.tgz |tar xfz - --strip-components 1 -C /usr/local/bin/ \
  && chmod +x /usr/local/bin/docker*
 ADD opt/qnib/docker/engine/bin/start.sh /opt/qnib/docker/engine/bin/
+RUN apt-get install -y golang
