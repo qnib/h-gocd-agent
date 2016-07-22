@@ -31,3 +31,6 @@ VOLUME ["/var/lib/docker/"]
 ADD etc/consul.d/docker-engine.json \
     etc/consul.d/gocd-agent.json \
     etc/consul.d/
+RUN wget -qO - https://test.docker.com/builds/Linux/x86_64/docker-1.12.0-rc4.tgz |tar xfz - --strip-components 1 -C /usr/local/bin/ \
+ && chmod +x /usr/local/bin/docker*
+ADD opt/qnib/docker/engine/bin/start.sh /opt/qnib/docker/engine/bin/
