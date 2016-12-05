@@ -44,4 +44,4 @@ RUN wget -qO /usr/local/bin/go-github https://github.com/qnib/go-github/releases
 RUN wget -qO /usr/local/bin/go-dockercli $(/usr/local/bin/go-github rLatestUrl --ghorg qnib --ghrepo go-dockercli --regex ".*Linux" --limit 1) \
  && chmod +x /usr/local/bin/go-dockercli
 RUN mkdir -p /opt/qnib/ \
- && wget -qO - $(/usr/local/bin/go-github rLatestUrl --ghorg qnib --ghrepo service-scripts --regex ".*\.tar" --limit 1) |tar xf - --strip-components 1 -C /opt/qnib/
+ && wget -qO - $(/usr/local/bin/go-github rLatestUrl --ghorg qnib --ghrepo service-scripts --regex ".*\.tar" --limit 1) |tar xf - --strip-components=0 -C /opt/

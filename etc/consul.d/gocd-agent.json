@@ -2,7 +2,7 @@
   "check": {
     "id": "gocd-agent",
     "name": "gocd-agent",
-    "script": "/opt/qnib/gocd/agent/bin/check.sh",
+    "script": "/opt/service-scripts/gocd/agent/bin/check.sh",
     "interval": "10s"
   }
 }
